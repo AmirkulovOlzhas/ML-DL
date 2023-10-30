@@ -1,0 +1,37 @@
+services:
+  jupyter_ml:
+    container_name: ml_jupyter_container
+    build: ./docker/jupyter/
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - "8888:8888"
+
+  # db:
+  #   container_name: ml_postgres_container
+  #   image: postgres:10-alpine
+  #   restart: always
+  #   volumes:
+  #     - data:/var/lib/postgresql/data
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #   ports:
+  #     - 5432:5432
+
+  # pg_admin:
+  #   container_name: ml_pgadmin4_container
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+  #     - PGADMIN_DEFAULT_PASSWORD=admin
+  #     - PGADMIN_LISTEN_PORT=5050
+  #   ports:
+  #     - "5050:5050" 
+
+# volumes:
+#   data:
+    
