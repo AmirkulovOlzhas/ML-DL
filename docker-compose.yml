@@ -7,17 +7,18 @@ services:
     ports:
       - "8888:8888"
 
-  # db:
-  #   container_name: ml_postgres_container
-  #   image: postgres:10-alpine
-  #   restart: always
-  #   volumes:
-  #     - data:/var/lib/postgresql/data
-  #   environment:
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=postgres
-  #   ports:
-  #     - 5432:5432
+  db:
+    container_name: ml_postgres_container
+    build: ./docker/postgres/
+    restart: always
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    
 
   # pg_admin:
   #   container_name: ml_pgadmin4_container
@@ -32,6 +33,6 @@ services:
   #   ports:
   #     - "5050:5050" 
 
-# volumes:
-#   data:
+volumes:
+  data:
     
