@@ -7,3 +7,8 @@
 .bash_history
 lab/tensorflow_models/digits
 docker/docker.md
+lab/.ipynb_checkpoints
+lab/.jupyter
+docker/postgres/pgsmtp-tut.sql
+docker/postgres/pgsmtp-0.1.1 for plpython3.zip
+lab/email_conf.py
