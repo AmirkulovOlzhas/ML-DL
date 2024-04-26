@@ -11,4 +11,6 @@ lab/.ipynb_checkpoints
 lab/.jupyter
 docker/postgres/pgsmtp-tut.sql
 docker/postgres/pgsmtp-0.1.1 for plpython3.zip
+docker/postgres12/pgsmtp-tut.sql
+docker/postgres12/pgsmtp-0.1.1 for plpython3.zip
 lab/email_conf.py

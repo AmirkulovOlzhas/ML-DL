@@ -18,21 +18,33 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5432:5432"
-    
 
-  # pg_admin:
-  #   container_name: ml_pgadmin4_container
-  #   image: dpage/pgadmin4
+  # pg_db_12:
+  #   container_name: ml_postgres_12_container
+  #   build: ./docker/postgres12/
   #   restart: always
-  #   depends_on:
-  #     - db
+  #   volumes:
+  #     - data12:/var/lib/postgresql/data
   #   environment:
-  #     - PGADMIN_DEFAULT_EMAIL=admin@mail.com
-  #     - PGADMIN_DEFAULT_PASSWORD=admin
-  #     - PGADMIN_LISTEN_PORT=5050
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
   #   ports:
-  #     - "5050:5050" 
+  #     - "5432:5432"
+
+  pg_admin:
+    container_name: ml_pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+    ports:
+      - "5050:5050" 
 
 volumes:
   data:
+  # data12:
     
